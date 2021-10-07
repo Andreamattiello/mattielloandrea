@@ -5,7 +5,7 @@ class Studente:
     ragazze= 0
 
     #metodo costruttore
-    def _init_(self, nome, cognome, genere, eta, classe):
+    def __init__(self, nome, cognome, genere, eta, classe):
 
         #attributi di istanza
         
@@ -18,59 +18,49 @@ class Studente:
         if self.genere == "ragazzo":
             Studente.ragazzi += 1
         else:
-            Classe.ragazze +=1
-
-        
-                
-                
-            
+            Studente.ragazze +=1
 
 
-                #metodo get
-        def scheda(self):
-            return str("Scheda:\nNome: " + self.nome + "\nCognome: " + self.cognome + "\nGenere: " +self.genere + "\nEta: " + self.eta + "\nClasse: " + self.classe)
+        #metodo get
+    def scheda(self):
+        return str("Scheda:\nNome: " + self.nome + "\nCognome: " + self.cognome + "\nGenere: " +self.genere + "\nEta: " + str(self.eta) + "\nClasse: " + self.classe)
 
-        def studenti_totali():
-            return str("\nNumero totale di studenti: " + str(Studente.studenti) + "\nNumero ragazzi: " + str(Studente.ragazzi) + "\nNumero ragazze: " + str(Studente.ragazze))
-        
-            
-                   
-                
+    def studenti_totali():
+        return str("\nNumero totale di studenti: " + str(Studente.studenti) + "\nNumero ragazzi: " + str(Studente.ragazzi) + "\nNumero ragazze: " + str(Studente.ragazze))
             
 
             #metodo set
-            def set_eta(self, eta):
-                self.eta = eta
-            
-                
+    def set_eta(self, eta):
+        self.eta = eta
+    
+                           
                     
-                    
+#inizio del main
+#costruzione oggetti
 
-                #costruzione oggetti
-                
-                Simone = Studente ("Simone","Sigillo","ragazzo",17,"quartaE")
-                Luca = Studente("Luca","Petrazzuolo","ragazzo",18,"quintaE")
-               
+Simone = Studente("Simone","Sigillo","ragazzo",17,"quartaE")
+Luca = Studente("Luca","Petrazzuolo","ragazzo",18,"quintaE")
 
-                #print("il tipo di variabile costruita è: ")
-                #print(Simone)
-                #print(Luca)
 
-               #utilizzo metodo get
+#print("il tipo di variabile costruita è: ")
+#print(Simone)
+#print(Luca)
 
-                print("la singola scheda è: ")
-                print (Simone.scheda())
-                print (Luca.scheda())
+#utilizzo metodo get
 
-                print(Studente.studenti_totali())
-             
-             
+print("la singola scheda è: ")
+print (Simone.scheda())
+print (Luca.scheda())
 
-                #utilizzo metodo set
-                Simone.set_eta(17)
-                print(Simone.scheda())
+print(Studente.studenti_totali())
 
-                #altro metodo per visualizzare le informazioni, (_dict_)
-                #print()
-                #print(Simone._dict_)
-                #print(Luca._dict_)
+
+
+#utilizzo metodo set
+Simone.set_eta(17)
+print(Simone.scheda())
+
+#altro metodo per visualizzare le informazioni, (_dict_)
+#print()
+#print(Simone._dict_)
+#print(Luca._dict_)
